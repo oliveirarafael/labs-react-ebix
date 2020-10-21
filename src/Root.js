@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Clientes from './components/Clientes';
 import Painel from './shared/Painel/Painel';
 
 function Root() {
@@ -10,10 +11,7 @@ function Root() {
   
   return (
     <>
-      {nome}
-      <Painel onClick={alterarNome}>
-        <p>Conteudo</p>
-      </Painel>
+      <Clientes />
     </>
   );
 }

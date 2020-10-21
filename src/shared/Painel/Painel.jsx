@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-function Painel({ children, onClick }) {
+function Painel(props) {
   const [titulo, setTitulo] = useState("Titulo Generico");
 
+  console.log(props);
+  
   function Titulo() {
     return <h1>{titulo}</h1>;
   }
 
   function alterarTitulo(){
     setTitulo("Novo Titulo")
-    onClick("Rafael")
+    props.onClick("Rafael")
   } 
 
   useEffect(() => {
@@ -24,7 +26,7 @@ function Painel({ children, onClick }) {
     <>
       {console.log("Return()")}
       <Titulo />
-      {children}
+      {props.children}
       <button onClick={alterarTitulo}>Alterar Titulo</button>
     </>
   );
