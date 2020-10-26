@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getClientes, salvarCliente } from "./Clientes.service";
+import { deletarCliente, getClientes, salvarCliente } from "./Clientes.service";
 
 function Clientes() {
   const [clientes, setClientes] = useState([]);
@@ -18,6 +18,11 @@ function Clientes() {
       carregaClientes();
   }
 
+  function deletar(id){
+    deletarCliente(id);
+    carregaClientes();
+  }
+
   useEffect(() => {
     carregaClientes();
   }, []);
@@ -29,7 +34,9 @@ function Clientes() {
       <button onClick={salvar}>Salvar</button>
       <ul>
         {clientes.map((cliente) => (
-          <li key={cliente.id}>{cliente.nome}</li>
+          <li key={cliente.id}>{cliente.nome}
+            <button onClick={() => deletar(cliente.id)}>Deletar</button>
+          </li>
         ))}
       </ul>
     </div>

@@ -1,12 +1,3 @@
 {
-  "clientes": [
-    {
-      "id": 1,
-      "nome": "Paulo"
-    },
-    {
-      "nome": "Rafael",
-      "id": 2
-    }
-  ]
+  "clientes": []
 }
